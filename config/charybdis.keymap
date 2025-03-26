@@ -6,39 +6,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        ParaLeft {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <4 16>;
-        };
-
-        ParaRight {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <7 19>;
-        };
-
-        bootloaderLeft {
-            bindings = <&bootloader>;
-            key-positions = <0 13>;
-        };
-
-        bootloaderRight {
-            bindings = <&bootloader>;
-            key-positions = <11 22>;
-        };
-
-        resetLeft {
-            bindings = <&sys_reset>;
-            key-positions = <0 12>;
-        };
-
-        resetRight {
-            bindings = <&sys_reset>;
-            key-positions = <11 23>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     trackball_listener {
         compatible = "zmk,input-behavior-listener";
@@ -85,17 +53,6 @@
         compatible = "zmk,input-behavior-tog-layer";
         #binding-cells = <1>;
         time-to-live-ms = <750>;
-    };
-
-    behaviors {
-        lt: layer_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <240>;
-            quick-tap-ms = <150>;
-            bindings = <&mo>, <&kp>;
-        };
     };
 
     keymap {
