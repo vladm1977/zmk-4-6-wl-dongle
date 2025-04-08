@@ -3,7 +3,7 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/petejohanson
     - name: badjeff
-      url-base: https://github.com/badjeff
+      url: https://github.com/badjeff/zmk-pmw3610-driver
     - name: minhe7735 
       url-base: https://github.com/minhe7735
     # Additional modules containing boards/shields/custom code can be listed here as well
