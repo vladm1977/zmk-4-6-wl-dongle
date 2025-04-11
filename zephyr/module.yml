@@ -1,3 +1,4 @@
+Name: zml-config
 build:
   settings:
     board_root: .
