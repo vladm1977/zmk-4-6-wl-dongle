@@ -4,8 +4,6 @@ manifest:
       url-base: https://github.com/petejohanson
     - name: badjeff
       url-base: https://github.com/badjeff  # Fixed: Use url-base instead of url
-    - name: minhe7735 
-      url-base: https://github.com/minhe7735
 
   projects:
     - name: zmk
@@ -20,9 +18,6 @@ manifest:
       revision: main
     - name: zmk-input-behavior-listener
       remote: badjeff
-      revision: main
-    - name: prospector-zmk-module
-      remote: minhe7735 
       revision: main
   self:
     path: config
