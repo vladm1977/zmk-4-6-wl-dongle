@@ -21,18 +21,18 @@
         };
 
         bootloaderLeft {
-           // bindings = <&bootloader>;
+            bindings = <&bootloader>;
             key-positions = <0 13>;
         };
         bootloaderRight {
-           // bindings = <&bootloader>;
+            bindings = <&bootloader>;
             key-positions = <11 22>;
         };
         resetLeft {
-          //  bindings = <&sys_reset>;
+            bindings = <&sys_reset>;
             key-positions = <0 12>;
         };
-       // resetRight {
+        resetRight {
             bindings = <&sys_reset>;
             key-positions = <11 23>;
         };
