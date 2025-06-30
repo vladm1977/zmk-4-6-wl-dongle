@@ -36,6 +36,10 @@
             bindings = <&sys_reset>;
             key-positions = <11 23>;
         };
+        combo_unlock {
+        key-positions = <0 4>;
+        bindings = <&studio_unlock>;
+        };
     };
 
     trackball_listener {
