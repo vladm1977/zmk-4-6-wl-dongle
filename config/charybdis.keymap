@@ -10,31 +10,9 @@
     combos {
         compatible = "zmk,combos";
 
-        ParaLeft {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <4 16>;
-        };
-
-        ParaRight {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <7 19>;
-        };
-
-        bootloaderLeft {
-            bindings = <&bootloader>;
-            key-positions = <0 13>;
-        };
-        bootloaderRight {
-            bindings = <&bootloader>;
-            key-positions = <11 22>;
-        };
-        resetLeft {
-            bindings = <&sys_reset>;
-            key-positions = <0 12>;
-        };
-        resetRight {
-            bindings = <&sys_reset>;
-            key-positions = <11 23>;
+        combo_unlock {
+           key-positions = <0 4>;
+           bindings = <&studio_unlock>;
         };
     };
 
