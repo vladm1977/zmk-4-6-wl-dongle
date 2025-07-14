@@ -52,12 +52,12 @@
     trackball_snipe_listener {
         compatible = "zmk,input-behavior-listener";   
         device = <&vtrackball>;
-        layers = <>;
+        layers = <5>;
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
         scale-multiplier = <1>;
-        scale-divisor = <4>;
+        scale-divisor = <2>;
     };
 
     trackball_scroll_listener {
@@ -68,7 +68,7 @@
         x-input-code = <INPUT_REL_MISC>;
         y-input-code = <INPUT_REL_WHEEL>;
         y-invert;
-        bindings = <&ib_wheel_scaler 1 24>;
+        bindings = <&ib_wheel_scaler 1 16>;
     };
 
     ib_wheel_scaler: ib_wheel_scaler {
