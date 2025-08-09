@@ -103,7 +103,6 @@
                 &macro_press &kp LGUI &kp DOT>,
                 &macro_pause_for_release,
                 &macro_release &kp LGUI &kp DOT
-            >;
         };
 
         win_dot_hold_tap: win_dot_ht {
