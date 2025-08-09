@@ -95,7 +95,22 @@
                 <&mo>,
                 <&kp>;
         };
+
+       win_dot_macro: win_dot_macro {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;  // без параметров
+        bindings = <&kp LGUI &kp DOT>;  // одно действие: Win, затем точка
+       };
+
+        win_dot_hold_tap: win_dot {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "hold-preferred";
+        tapping-term-ms = <200>;
+        bindings = <&win_dot_macro>, <&kp LGUI>;
+        // Hold = Win + ., Tap = Win
     };
+};
 
     keymap {
         compatible = "zmk,keymap";
@@ -108,7 +123,7 @@
             // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                   &caps_word     &kp Q          &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P      &mt RIGHT_BRACKET LEFT_BRACKET
             // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-                  &kp LEFT_GUI    &lt 5 A        &kp S         &kp D         &kp F         &kp G             &kp H         &kp J         &kp K         &kp L       &kp SEMI      &kp APOS
+                &win_dot_hold_tap  &lt 5 A        &kp S         &kp D         &kp F         &kp G             &kp H         &kp J         &kp K         &kp L       &kp SEMI      &kp APOS
             // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
                  &mt LSHFT GRAVE  &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M      &kp COMMA      &kp DOT     &mt QMARK FSLH   &kp RSHFT 
             // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
