@@ -107,7 +107,7 @@
             #binding-cells = <2>;
             flavor = "hold-preferred";       /* или "balanced" */
             tapping-term-ms = <200>;
-            bindings = <&win_dot_macro>, <&kp LGUI>;
+            bindings = <&win_dot_macro &kp LGUI>;
         };
     };
 
