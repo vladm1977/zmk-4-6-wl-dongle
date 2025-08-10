@@ -99,9 +99,10 @@
     win_dot_macro: win_dot_macro {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_press &kp LWIN &kp DOT>,
-                   <&macro_pause_for_release>,
-                   <&macro_release &kp LWIN &kp DOT>;
+        bindings = <&macro_press &kp LWIN &kp DOT>
+                   , <&macro_pause_for_release>
+                   , <&macro_release &kp LWIN &kp DOT>
+                   ;
         };
 
     win_dot_ht: win_dot_ht {
