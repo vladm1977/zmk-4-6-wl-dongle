@@ -38,6 +38,11 @@
             bindings = <&sys_reset>;
             key-positions = <11 23>;
         };
+
+        zmk_studio {
+            bindings = <&studio_unlock>;
+            key-positions = <1 2>;
+        };
     };
 
     trackball_listener {
