@@ -97,6 +97,44 @@
             quick-tap-ms = <150>;
             bindings = <&mo>, <&kp>;
         };
+
+        win_hold_tap: win_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "WIN_HOLD_TAP";
+            bindings = <&win_dot>, <&win_lgui>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            hold-trigger-key-positions = <24>;
+        };
+    };
+
+    macros {
+        win_dot: win_dot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_GUI &kp DOT>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&kp LEFT_GUI &kp DOT>;
+
+            label = "WIN_DOT";
+        };
+
+        win_lgui: win_lgui {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_GUI>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&kp LEFT_GUI>;
+
+            label = "WIN_LGUI";
+        };
     };
 
     keymap {
