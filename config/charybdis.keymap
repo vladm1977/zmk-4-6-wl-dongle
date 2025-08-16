@@ -106,7 +106,7 @@
         win_hold_tap: win_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "WIN_HOLD_TAP";
-            bindings = <&win_dot>, <&win_lgui>;
+            bindings = <&win_dot>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -157,8 +157,8 @@
             >;
         };
 
-        Lower {
-            display-name = "Lower";
+        Nav {
+            display-name = "Nav";
             display-name = "Lower";
             bindings = <
 &trans        &trans  &trans    &trans    &sys_reset  &bootloader    &trans  &trans  &trans  &trans   &trans    &trans
@@ -170,8 +170,8 @@
             >;
         };
 
-        Raise {
-            display-name = "Raise";
+        Media {
+            display-name = "Media";
             display-name = "Raise";
             bindings = <
 &trans  &trans        &trans          &trans            &trans             &trans             &bootloader  &sys_reset  &trans           &trans    &trans    &trans
