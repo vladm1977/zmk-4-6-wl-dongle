@@ -106,7 +106,7 @@
         win_hold_tap: win_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "WIN_HOLD_TAP";
-            bindings = <&win_dot>, <&kp>;
+            bindings = <&win_dot>, <&kp LGUI>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -150,7 +150,7 @@
             bindings = <
 &kp ESC          &kp N1   &kp N2  &kp N3  &kp N4     &kp N5       &kp N6        &kp N7  &kp N8     &kp N9   &kp N0          &kp DEL
 &caps_word       &kp Q    &kp W   &kp E   &kp R      &kp T        &kp Y         &kp U   &kp I      &kp O    &kp P           &mt RIGHT_BRACKET LEFT_BRACKET
-&kp LGUI         &lt 5 A  &kp S   &kp D   &kp F      &kp G        &kp H         &kp J   &kp K      &kp L    &kp SEMI        &kp APOS
+&win_hold_tap    &lt 5 A  &kp S   &kp D   &kp F      &kp G        &kp H         &kp J   &kp K      &kp L    &kp SEMI        &kp APOS
 &mt LSHFT GRAVE  &kp Z    &kp X   &kp C   &kp V      &kp B        &kp N         &kp M   &kp COMMA  &kp DOT  &mt QMARK FSLH  &kp RSHFT
                                   &mo 2   &kp RET    &kp SPACE    &kp BSPC      &mo 1
                                           &kp LCTRL  &kp TAB      &kp LEFT_ALT
