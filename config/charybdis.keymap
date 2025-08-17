@@ -111,7 +111,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "balanced";
-            hold-trigger-key-positions = <24>;
         };
     };
 
