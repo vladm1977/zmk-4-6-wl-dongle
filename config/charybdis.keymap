@@ -106,7 +106,7 @@
         win_hold_tap: win_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "WIN_HOLD_TAP";
-            bindings = <&win_dot>, <&kp LEFT_GUI>;
+            bindings = <&win_dot>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
