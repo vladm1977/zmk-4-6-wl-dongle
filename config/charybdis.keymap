@@ -52,7 +52,7 @@
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
-        scale-multiplier = <2>;
+        scale-multiplier = <3>;
         scale-divisor = <1>;
 
         // bindings = <&ib_toggle_layer 5>;
@@ -109,7 +109,7 @@
             bindings = <&win_dot>, <&win_lgui>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <500>;
             flavor = "balanced";
         };
     };
