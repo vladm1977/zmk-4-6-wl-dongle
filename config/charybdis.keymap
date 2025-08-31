@@ -107,9 +107,9 @@
             compatible = "zmk,behavior-hold-tap";
             label = "my_mt";
             #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <400>;
-            bindings = <&grave>, <&lshft>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&lshft>, <&grave>;
         };
 
         win_hold_tap: win_hold_tap {
