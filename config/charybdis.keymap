@@ -103,11 +103,12 @@
             bindings = <&mo>, <&kp>;
         };
 
-        my_mt: custom_mod_tap {
+        my_mt: my_mt {
             compatible = "zmk,behavior-hold-tap";
+            label = "my_mt";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <400;
+            tapping-term-ms = <400>;
             bindings = <&grave>, <&lshft>;
         };
 
