@@ -103,15 +103,6 @@
             bindings = <&mo>, <&kp>;
         };
 
-        my_mt: my_mt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "my_mt";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&lshft>, <&grave>;
-        };
-
         win_hold_tap: win_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "WIN_HOLD_TAP";
@@ -150,30 +141,56 @@
             label = "WIN_LGUI";
         };
 
-        grave: grave {
+        ENG: grave {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp GRAVE>,
+                <&kp LEFT_CONTROL &kp NUMBER_1>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&kp GRAVE>;
+                <&kp LEFT_CONTROL &kp NUMBER_1>;
 
             label = "GRAVE";
         };
 
-        lshft: lshft {
+        RU: lshft {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LSHFT>,
+                <&kp LCTRL &kp KP_NUMBER_0>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&kp LSHFT>;
+                <&kp LEFT_CONTROL &kp KP_NUMBER_0>;
 
             label = "LSHFT";
+        };
+
+        snip: snip {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_WIN &kp LSHIFT &kp S>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&kp LEFT_WIN &kp LSHFT &kp S>;
+
+            label = "SNIP";
+        };
+
+        app_closure: app_closure {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT &kp F4>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&kp LEFT_ALT &kp F4>;
+
+            label = "APP_CLOSURE";
         };
     };
 
@@ -186,7 +203,7 @@
 &kp ESC            &kp N1   &kp N2  &kp N3  &kp N4     &kp N5       &kp N6        &kp N7  &kp N8     &kp N9   &kp N0          &kp DEL
 &caps_word         &kp Q    &kp W   &kp E   &kp R      &kp T        &kp Y         &kp U   &kp I      &kp O    &kp P           &mt RIGHT_BRACKET LEFT_BRACKET
 &win_hold_tap 0 0  &lt 5 A  &kp S   &kp D   &kp F      &kp G        &kp H         &kp J   &kp K      &kp L    &kp SEMI        &kp APOS
-&my_mt 0 0         &kp Z    &kp X   &kp C   &kp V      &kp B        &kp N         &kp M   &kp COMMA  &kp DOT  &mt QMARK FSLH  &kp RSHFT
+&kp LSHFT          &kp Z    &kp X   &kp C   &kp V      &kp B        &kp N         &kp M   &kp COMMA  &kp DOT  &mt QMARK FSLH  &kp RSHFT
                                     &mo 2   &kp RET    &kp SPACE    &kp BSPC      &mo 1
                                             &kp LCTRL  &kp TAB      &kp LEFT_ALT
             >;
@@ -196,10 +213,10 @@
             display-name = "Nav";
             display-name = "Nav";
             bindings = <
-&trans        &trans  &trans    &trans    &sys_reset  &bootloader    &trans  &trans          &trans          &trans   &trans    &trans
-&trans        &trans  &trans    &kp UP    &trans      &trans         &none   &none           &none           &none    &kp HOME  &kp F1
-&trans        &trans  &kp LEFT  &kp DOWN  &kp RIGHT   &trans         &none   &kp LANGUAGE_1  &kp LANGUAGE_2  &none    &trans    &kp F10
-&kp LEFT_ALT  &trans  &trans    &trans    &kp MINUS   &kp PLUS       &none   &none           &none           &kp DOT  &trans    &kp F20
+&trans        &trans  &trans    &trans    &sys_reset  &bootloader    &trans  &trans        &trans  &trans   &trans     &trans
+&trans        &trans  &trans    &kp UP    &trans      &trans         &none   &none         &none   &none    &none      &none
+&trans        &trans  &kp LEFT  &kp DOWN  &kp RIGHT   &trans         &none   &ENG          &RU     &none    &kp GRAVE  &none
+&kp LEFT_ALT  &trans  &trans    &trans    &kp MINUS   &kp PLUS       &snip   &app_closure  &none   &kp DOT  &trans     &none
                                 &trans    &trans      &trans         &trans  &trans
                                           &trans      &trans         &trans
             >;
