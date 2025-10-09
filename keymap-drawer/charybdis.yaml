@@ -24,7 +24,7 @@ layers:
   - I
   - O
   - P
-  - '['
+  - {t: '[', h: ']'}
   - {t: '&win_lgui', h: '&win_dot'}
   - A
   - S
@@ -47,8 +47,8 @@ layers:
   - M
   - ','
   - .
-  - /
-  - ']'
+  - {t: /, h: '?'}
+  - RSHFT
   - Mouse
   - RET
   - SPACE
