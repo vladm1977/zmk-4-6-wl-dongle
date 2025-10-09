@@ -51,12 +51,12 @@ layers:
   - ']'
   - Mouse
   - RET
-  - LEFT GUI
-  - LEFT ALT
+  - SPACE
+  - BACK SPACE
   - Symbol
   - LCTRL
-  - SPACE
-  - BSPC
+  - TAB
+  - LALT
   Mouse:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
