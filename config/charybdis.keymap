@@ -209,7 +209,7 @@
 &trans  &trans  &trans    &trans     &trans               &trans       &trans  &trans     &trans     &trans     &trans  &trans
 &trans  &trans  &trans    &trans     &trans               &trans       &trans  &trans     &trans     &trans     &trans  &trans
 &trans  &trans  &kp LALT  &kp LSHFT  &kp LCTRL            &trans       &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans  &trans
-&trans  &trans  &trans    &mo 3      &mo 2                &trans       &trans  &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans    &mo 3      &mo 4                &trans       &trans  &trans     &trans     &trans     &trans  &trans
                           &mkp MCLK  &mt LC(LS(V)) LC(V)  &mkp LCLK    &trans  &trans
                                      &kp LC(C)            &kp LC(X)    &trans
             >;
