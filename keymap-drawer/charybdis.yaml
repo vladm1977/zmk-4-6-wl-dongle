@@ -29,7 +29,7 @@ layers:
   - A
   - S
   - D
-  - F
+  - {t: F, h: Mouse}
   - G
   - H
   - J
@@ -49,7 +49,7 @@ layers:
   - .
   - {t: /, h: '?'}
   - RSHFT
-  - Mouse
+  - Number
   - RET
   - SPACE
   - BACK SPACE
@@ -83,15 +83,15 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LGUI
+  - {t: ▽, type: trans}
   - LALT
   - LSHFT
-  - LCTRL
+  - {t: LCTRL, type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&mkp MB1'
-  - '&mkp MB2'
-  - '&mkp MB3'
+  - L CLK
+  - M CLK
+  - R CLK
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -106,13 +106,13 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&mkp MB1', type: held}
-  - '&mkp MB2'
-  - '&mkp MB3'
+  - M CLK
+  - {t: Ctl+ V, h: Ctl+Sft+ V}
+  - L CLK
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Ctl+ C
+  - Ctl+ X
   - {t: ▽, type: trans}
   Symbol:
   - {t: ▽, type: trans}
@@ -154,9 +154,9 @@ layers:
   - LEFT ALT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - Ctl+ 1
+  - Ctl+ 0
   - {t: ▽, type: trans}
-  - '-'
-  - +
   - '1'
   - '2'
   - '3'
@@ -198,28 +198,28 @@ layers:
   - DEL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - PREVIOUS
+  - PLAY PAUSE
+  - NEXT
+  - MUTE
+  - _
+  - KP EQUAL
+  - '['
+  - ']'
+  - \
+  - '~'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - VOL DN
+  - VOLUME UP
   - '-'
   - +
   - '{'
   - '}'
   - '|'
-  - '~'
+  - '`'
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
