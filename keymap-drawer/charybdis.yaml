@@ -129,25 +129,25 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - UP
+  - {t: ▽, type: trans}
+  - UP ARROW
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '7'
-  - '8'
-  - '9'
-  - '0'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - HOME
   - F1
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - LEFT
-  - DOWN
+  - DOWN ARROW
   - RIGHT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '4'
-  - '5'
-  - '6'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - ''
   - {t: ▽, type: trans}
   - F10
@@ -157,9 +157,9 @@ layers:
   - Ctl+ 1
   - Ctl+ 0
   - {t: ▽, type: trans}
-  - '1'
-  - '2'
-  - '3'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - .
   - {t: ▽, type: trans}
   - F20
@@ -210,14 +210,14 @@ layers:
   - '~'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - VOL DN
-  - VOL UP
+  - VOLUME UP
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '-'
   - +
-  - '{'
-  - '}'
+  - '&snip'
+  - '&app_closure'
   - '|'
   - '`'
   - {type: held}
