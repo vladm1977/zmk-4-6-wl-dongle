@@ -26,7 +26,7 @@ layers:
   - P
   - {t: '[', h: ']'}
   - {t: '&win_lgui', h: '&win_dot'}
-  - A
+  - {t: A, h: Mouse}
   - S
   - D
   - {t: F, h: Mouse}
@@ -83,10 +83,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - LALT
   - LSHFT
-  - {t: LCTRL, type: held}
+  - LCTRL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - L CLK
@@ -211,9 +211,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - VOL DN
-  - VOLUME UP
+  - VOL UP
+  - {t: ▽, type: trans}
   - '-'
   - +
   - '{'
@@ -254,10 +254,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: Function, h: sticky}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
