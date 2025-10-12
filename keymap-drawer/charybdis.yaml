@@ -29,7 +29,7 @@ layers:
   - {t: A, h: Mouse}
   - S
   - D
-  - {t: F, h: Mouse}
+  - F
   - G
   - H
   - J
@@ -98,15 +98,15 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Number
-  - Function
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - M CLK
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Function
   - {t: Ctl+ V, h: Ctl+Sft+ V}
   - L CLK
   - {t: ▽, type: trans}
@@ -203,7 +203,7 @@ layers:
   - NEXT
   - MUTE
   - _
-  - KP EQUAL
+  - '='
   - '['
   - ']'
   - \
@@ -269,7 +269,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -277,7 +277,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: Base, h: toggle}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
