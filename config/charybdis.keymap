@@ -219,11 +219,11 @@
             label = "Base";
             display-name = "Base";
             bindings = <
-&kp ESC            &kp N1   &kp N2  &kp N3  &kp N4     &kp N5       &kp N6         &kp N7  &kp N8     &kp N9   &kp N0          &kp DEL
-&caps_word         &kp Q    &kp W   &kp E   &kp R      &kp T        &kp Y          &kp U   &kp I      &kp O    &kp P           &mt RIGHT_BRACKET LEFT_BRACKET
-&win_hold_tap 0 0  &lt 1 A  &kp S   &kp D   &kp F      &kp G        &kp H          &kp J   &kp K      &kp L    &kp SEMI        &kp APOS
-&kp LSHFT          &kp Z    &kp X   &kp C   &kp V      &kp B        &kp N          &kp M   &kp COMMA  &kp DOT  &mt QMARK FSLH  &kp RSHFT
-                                    &mo 3   &kp RET    &kp SPACE    &kp BACKSPACE  &mo 2
+&kp ESC            &kp N1   &kp N2  &kp N3  &kp N4     &kp N5       &kp N6         &kp N7       &kp N8     &kp N9   &kp N0          &kp DEL
+&caps_word         &kp Q    &kp W   &kp E   &kp R      &kp T        &kp Y          &kp U        &kp I      &kp O    &kp P           &mt RIGHT_BRACKET LEFT_BRACKET
+&win_hold_tap 0 0  &lt 1 A  &kp S   &kp D   &lt 1 F    &kp G        &kp H          &kp J        &kp K      &kp L    &kp SEMI        &kp APOS
+&kp LSHFT          &kp Z    &kp X   &kp C   &kp V      &kp B        &kp N          &kp M        &kp COMMA  &kp DOT  &mt QMARK FSLH  &kp RSHFT
+                                    &mo 4   &kp RET    &kp SPACE    &kp BACKSPACE  &lt 2 GRAVE
                                             &kp LCTRL  &kp TAB      &kp LALT
             >;
         };
@@ -232,12 +232,12 @@
             label = "Mouse";
             display-name = "Mouse";
             bindings = <
-&trans  &trans  &trans    &trans     &trans               &trans       &trans  &trans     &trans     &trans     &trans  &trans
-&trans  &trans  &trans    &trans     &trans               &trans       &trans  &trans     &trans     &trans     &trans  &trans
-&trans  &trans  &kp LALT  &kp LSHFT  &kp LCTRL            &trans       &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans  &trans
-&trans  &trans  &trans    &mo 3      &mkp MCLK            &trans       &trans  &trans     &trans     &trans     &trans  &trans
-                          &mo 4      &mt LC(LS(V)) LC(V)  &mkp LCLK    &trans  &trans
-                                     &kp LC(C)            &kp LC(X)    &trans
+&trans  &trans  &trans  &trans     &trans               &trans       &trans  &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans     &trans               &trans       &trans  &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans     &trans               &kp LCTRL    &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans  &trans
+&trans  &trans  &trans  &trans     &mo 2                &kp LSHFT    &trans  &trans     &trans     &trans     &trans  &trans
+                        &kp LC(A)  &mt LC(LS(V)) LC(V)  &mkp LCLK    &trans  &trans
+                                   &kp LC(C)            &kp LC(X)    &trans
             >;
         };
 
@@ -271,12 +271,12 @@
             label = "Function";
             display-name = "Function";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &sl 4     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &to 0
-                        &trans  &trans  &trans    &trans  &trans
-                                &trans  &trans    &trans
+&trans  &trans  &trans      &trans             &trans           &trans        &bootloader  &sys_reset  &trans    &trans        &trans    &trans
+&kp F1  &kp F2  &kp F3      &kp F4             &kp F5           &kp F6        &kp F7       &kp F8      &kp F9    &kp F10       &kp F11   &kp F12
+&trans  &trans  &kp C_PREV  &kp C_PP           &kp C_NEXT       &kp C_MUTE    &kp UNDER    &kp EQUAL   &kp LBKT  &kp RBKT      &kp BSLH  &kp TILDE
+&trans  &trans  &sl 4       &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans        &kp MINUS    &kp PLUS    &snip     &app_closure  &kp PIPE  &to 0
+                            &trans             &trans           &trans        &trans       &trans
+                                               &trans           &trans        &trans
             >;
         };
 
