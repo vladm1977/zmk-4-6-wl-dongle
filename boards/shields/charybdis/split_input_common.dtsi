@@ -25,7 +25,7 @@
     device = <&trackball_split>;
 
     snipe {
-      layers = <NUM>;
+      layers = <SYM>;
       input-processors = <&zip_xy_scaler 1 3>;
     };
 
