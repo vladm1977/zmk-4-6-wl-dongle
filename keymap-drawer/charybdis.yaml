@@ -137,8 +137,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - HOME
-  - F1
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - LEFT
@@ -150,7 +150,7 @@ layers:
   - {t: ▽, type: trans}
   - ''
   - {t: ▽, type: trans}
-  - F10
+  - {t: ▽, type: trans}
   - LEFT ALT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -159,10 +159,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - KP COMMA
   - .
   - {t: ▽, type: trans}
-  - F20
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -204,8 +204,8 @@ layers:
   - MUTE
   - _
   - '='
-  - '['
-  - ']'
+  - <
+  - '>'
   - \
   - '~'
   - {t: ▽, type: trans}
@@ -217,7 +217,7 @@ layers:
   - '-'
   - +
   - '&snip'
-  - '&app_closure'
+  - UNDO
   - '|'
   - '`'
   - {t: ▽, type: trans}
@@ -229,18 +229,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   Function:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - BOOT LDR
-  - '&sys_reset'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - F1
   - F2
   - F3
@@ -254,15 +242,27 @@ layers:
   - F11
   - DEV TOOLS
   - {t: ▽, type: trans}
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - ^
+  - '&'
+  - KP MULTIPLY
+  - (
+  - )
+  - DELETE
   - {t: ▽, type: trans}
+  - RANDOM PLAY
   - PREV
   - PP
   - NEXT
   - MUTE
   - _
   - '='
-  - '['
-  - ']'
+  - <
+  - '>'
   - \
   - '~'
   - {t: ▽, type: trans}
