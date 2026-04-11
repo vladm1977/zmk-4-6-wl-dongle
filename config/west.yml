@@ -18,10 +18,10 @@ manifest:
       revision: zmk-0.4
     - name: zmk-split-peripheral-input-relay
       remote: badjeff
-      revision: main
+      revision: zmk-0.4
     - name: zmk-input-behavior-listener
       remote: badjeff
-      revision: main
+      revision: zmk-0.4
     - name: prospector-zmk-module
       remote: carrefinho
       revision: feat/new-status-screens
