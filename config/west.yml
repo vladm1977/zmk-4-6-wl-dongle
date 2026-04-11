@@ -4,8 +4,6 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: badjeff
       url-base: https://github.com/badjeff
-    - name: kirashuffler
-      url-base: https://github.com/kirashuffler
     - name: carrefinho
       url-base: https://github.com/carrefinho
   projects:
@@ -16,8 +14,6 @@ manifest:
     - name: zmk-pmw3610-driver
       remote: badjeff
       revision: zmk-0.4
-      remote: kirashuffler
-      revision: main
     - name: prospector-zmk-module
       remote: carrefinho
       revision: feat/new-status-screens
