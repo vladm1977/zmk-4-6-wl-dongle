@@ -9,13 +9,6 @@
     acceleration-exponent = <1>;
 };
 
-&msc {
-    x-input-code = <INPUT_REL_HWHEEL>;
-    y-input-code = <INPUT_REL_WHEEL>;
-    time-to-max-speed-ms = <300>;
-    acceleration-exponent = <0>;
-};
-
 #define BASE 0
 #define MOUSE 1
 #define SYMBOL 2
