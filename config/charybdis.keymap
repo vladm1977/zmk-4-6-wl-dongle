@@ -17,256 +17,279 @@
 };
 
 #define BASE 0
-#define Nav 1
-#define Media 2
-#define Game 3
-#define Game_++ 4
-#define Mouse 5
+#define MOUSE 1
+#define SYMBOL 2
+#define NUMBER 3
+#define FUNCTION 4
+#define GAME 5
+#define RESET 6
 
 #define KEYS_L 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24
 #define KEYS_R 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29
 #define THUMBS 30 31 32 33 34 35 
 
-/ {
-    combos {
-        compatible = "zmk,combos";
-
-        ParaLeft {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <4 16>;
-        };
-
-        ParaRight {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <7 19>;
-        };
-
-        bootloaderLeft {
-            bindings = <&bootloader>;
-            key-positions = <0 13>;
-        };
-
-        bootloaderRight {
-            bindings = <&bootloader>;
-            key-positions = <11 22>;
-        };
-
-        resetLeft {
-            bindings = <&sys_reset>;
-            key-positions = <0 12>;
-        };
-
-        resetRight {
-            bindings = <&sys_reset>;
-            key-positions = <11 23>;
-        };
-
-        zmk_studio {
-            bindings = <&studio_unlock>;
-            key-positions = <1 2>;
-        };
-    };
-
-    trackball_listener {
-        compatible = "zmk,input-behavior-listener";
-        device = <&vtrackball>;
-        layers = <0 1 2 3 4 5>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-        scale-multiplier = <3>;
-        scale-divisor = <1>;
-
-        // bindings = <&ib_toggle_layer 5>;
-    };
-
-    trackball_snipe_listener {
-        compatible = "zmk,input-behavior-listener";
-        device = <&vtrackball>;
-        layers = <5>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-        scale-multiplier = <1>;
-        scale-divisor = <6>;
-    };
-
-    trackball_scroll_listener {
-        compatible = "zmk,input-behavior-listener";
-        device = <&vtrackball>;
-        layers = <2>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_MISC>;
-        y-input-code = <INPUT_REL_WHEEL>;
-        y-invert;
-        bindings = <&ib_wheel_scaler 1 8>;
-    };
-
-    ib_wheel_scaler: ib_wheel_scaler {
-        compatible = "zmk,input-behavior-scaler";
-        #binding-cells = <2>;
-        evt-type = <INPUT_EV_REL>;
-        input-code = <INPUT_REL_WHEEL>;
-    };
-
-    ib_toggle_layer: ib_toggle_layer {
-        compatible = "zmk,input-behavior-tog-layer";
-        #binding-cells = <1>;
-        time-to-live-ms = <750>;
-    };
-
-    behaviors {
-        lt: layer_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <240>;
-            quick-tap-ms = <150>;
-            bindings = <&mo>, <&kp>;
-        };
-
-        win_hold_tap: win_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "WIN_HOLD_TAP";
-            bindings = <&win_dot>, <&win_lgui>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-        };
-    };
-
-    macros {
-        win_dot: win_dot {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_GUI &kp DOT>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&kp LEFT_GUI &kp DOT>;
-
-            label = "WIN_DOT";
-        };
-
-        win_lgui: win_lgui {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_GUI>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&kp LEFT_GUI>;
-
-            label = "WIN_LGUI";
-        };
-
-        snip: snip {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_WIN &kp LSHIFT &kp S>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&kp LEFT_WIN &kp LSHFT &kp S>;
-
-            label = "SNIP";
-        };
-
-        app_closure: app_closure {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_ALT &kp F4>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&kp LEFT_ALT &kp F4>;
-
-            label = "APP_CLOSURE";
-        };
-    };
-
-    keymap {
-        compatible = "zmk,keymap";
-
-        Base {
-            display-name = "Base";
-            bindings = <
-&kp ESC            &kp N1   &kp N2  &kp N3  &kp N4     &kp N5       &kp N6        &kp N7  &kp N8     &kp N9   &kp N0          &kp DEL
-&caps_word         &kp Q    &kp W   &kp E   &kp R      &kp T        &kp Y         &kp U   &kp I      &kp O    &kp P           &mt RIGHT_BRACKET LEFT_BRACKET
-&win_hold_tap 0 0  &lt 5 A  &kp S   &kp D   &kp F      &kp G        &kp H         &kp J   &kp K      &kp L    &kp SEMI        &kp APOS
-&kp LSHFT          &kp Z    &kp X   &kp C   &kp V      &kp B        &kp N         &kp M   &kp COMMA  &kp DOT  &mt QMARK FSLH  &kp RSHFT
-                                    &mo 2   &kp RET    &kp SPACE    &kp BSPC      &mo 1
-                                            &kp LCTRL  &kp TAB      &kp LEFT_ALT
-            >;
-        };
-
-        Nav {
-            display-name = "Nav";
-            display-name = "Nav";
-            bindings = <
-&trans        &trans  &trans    &trans    &sys_reset        &bootloader    &trans  &trans        &trans  &trans   &trans     &trans
-&trans        &trans  &trans    &kp UP    &trans            &trans         &none   &none         &none   &none    &none      &none
-&trans        &trans  &kp LEFT  &kp DOWN  &kp RIGHT         &trans         &none   &none         &none   &none    &kp GRAVE  &none
-&kp LEFT_ALT  &trans  &trans    &trans    &kp LC(NUMBER_1)  &kp LC(N0)     &snip   &app_closure  &none   &kp DOT  &trans     &none
-                                &trans    &trans            &trans         &trans  &trans
-                                          &trans            &trans         &trans
-            >;
-        };
-
-        Media {
-            display-name = "Media";
-            display-name = "Media";
-            bindings = <
-&trans  &trans        &trans          &trans            &trans        &trans             &bootloader  &sys_reset  &trans           &trans    &trans    &trans
-&trans  &kp EXCL      &kp AT          &kp HASH          &kp DLLR      &kp PRCNT          &kp CARET    &kp AMPS    &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp DEL
-&trans  &bt BT_CLR    &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT    &kp C_MUTE         &kp UNDER    &kp EQUAL   &kp LBKT         &kp RBKT  &kp BSLH  &kp TILDE
-&trans  &out OUT_TOG  &trans          &trans            &kp C_VOL_DN  &kp C_VOLUME_UP    &kp MINUS    &kp PLUS    &kp LBRC         &kp RBRC  &kp PIPE  &kp GRAVE
-                                      &trans            &trans        &trans             &trans       &trans
-                                                        &trans        &trans             &trans
-            >;
-        };
-
-        Game {
-            display-name = "Game";
-            display-name = "Game";
-            bindings = <
-&trans  &trans  &trans          &trans            &trans             &trans             &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans          &trans            &trans             &trans             &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT         &kp C_MUTE         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans          &trans            &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &trans  &trans  &trans  &trans  &trans  &to 0
-                                &trans            &trans             &trans             &trans  &trans
-                                                  &trans             &trans             &trans
-            >;
-        };
-
-        Game_++ {
-            display-name = "Game ++";
-            display-name = "Gameq";
-            bindings = <
-&trans   &trans        &trans        &trans        &trans        &trans          &trans         &trans         &trans         &trans         &trans         &trans
-&kt F5   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp LC(RA(Y))  &kp LC(RA(U))  &kp LC(RA(I))  &kp LC(RA(H))  &kp LC(RA(J))  &kp LC(RA(DEL))
-&to 3    &kp L         &kp O         &kp Y         &kp K         &kp G           &trans         &trans         &trans         &trans         &trans         &kp LA(F4)
-&kp F10  &none         &to 0         &none         &kp NUMBER_6  &kp NUMBER_7    &trans         &trans         &trans         &trans         &trans         &to 0
-                                     &trans        &trans        &trans          &trans         &trans
-                                                   &trans        &trans          &trans
-            >;
-        };
-
-        Mouse {
-            display-name = "Mouse";
-            bindings = <
-&trans  &trans  &trans  &trans     &trans     &trans       &trans  &trans     &trans     &trans     &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans       &trans  &trans     &trans     &trans     &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans       &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans       &trans  &trans     &trans     &trans     &trans  &trans
-                        &kp LC(X)  &kp LC(V)  &mkp LCLK    &trans  &trans
-                                   &kp LC(C)  &trans       &trans
-            >;
-        };
-    };
+&sk {
+  release-after-ms = <600>;
+  quick-release;
 };
+
+&sl {
+  ignore-modifiers;
+};
+
+&mt {
+  flavor = "tap-preferred";
+};
+
+&lt {
+  flavor = "balanced";
+  tapping-term-ms = <200>;
+  quick-tap-ms = <175>;
+};
+
+&caps_word {
+  /delete-property/ ignore-modifiers;
+};
+
+/ {
+  behaviors {
+    hml: hml {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <2000>;
+      quick-tap-ms = <175>;
+      require-prior-idle-ms = <250>;
+      hold-trigger-key-positions = <KEYS_R THUMBS>;
+      hold-trigger-on-release;
+      bindings =
+        <&kp>,
+        <&kp>;
+    };
+
+    hmr: hmr {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <2000>;
+      quick-tap-ms = <175>;
+      require-prior-idle-ms = <250>;
+      hold-trigger-key-positions = <KEYS_L THUMBS>;
+      hold-trigger-on-release;
+      bindings =
+        <&kp>,
+        <&kp>;
+    };
+    hml_s: hml_s {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <2000>;
+      quick-tap-ms = <175>;
+      require-prior-idle-ms = <0>;
+      hold-trigger-key-positions = <KEYS_R THUMBS>;
+      hold-trigger-on-release;
+      bindings =
+        <&kp>,
+        <&kp>;
+    };
+
+    hmr_s: hmr_s {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <2000>;
+      quick-tap-ms = <175>;
+      require-prior-idle-ms = <0>;
+      hold-trigger-key-positions = <KEYS_L THUMBS>;
+      hold-trigger-on-release;
+      bindings =
+        <&kp>,
+        <&kp>;
+    };
+
+
+    smart_shift: smart_shift {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&sk LSHIFT>, <&caps_word>;
+      mods = <(MOD_LSFT)>;
+    };
+  };
+
+  combos {
+    compatible = "zmk,combos";
+    timeout-ms = <20>;
+    require-prior-idle-ms = <250>;
+
+    combo_reset_layer_left {
+      key-positions = <20 24>;
+      bindings = <&to RESET>;
+    };
+    combo_reset_layer_right {
+      key-positions = <25 29>;
+      bindings = <&to RESET>;
+    };
+    combo_reset_central {
+      key-positions = <32 33>;
+      bindings = <&bootloader>;
+      require-prior-idle-ms = <2000>;
+    };
+    combo_normal {
+      key-positions = <7 8>;
+      bindings = <&to BASE>;
+    };
+    combo_fn {
+      key-positions = <27 28>;
+      bindings = <&sl FUNCTION>;
+    };
+    combo_genshin {
+      key-positions = <5 9>;
+      bindings = <&to GAME>;
+    };
+    combo_esc {
+      key-positions = <1 2>;
+      bindings = <&kp ESCAPE>;
+    };
+    combo_tab {
+      key-positions = <2 3>;
+      bindings = <&kp TAB>;
+    };
+    combo_cdel {
+      key-positions = <11 12>;
+      bindings = <&kp LC(BACKSPACE)>;
+    };
+    combo_unlock {
+      key-positions = <0 4>;
+      bindings = <&studio_unlock>;
+    };
+  };
+  chosen {
+    zmk,physical-layout = &charybdis_6col_layout;
+  };
+
+  keymap {
+    compatible = "zmk,keymap";
+
+    Base {
+        label = "Base";
+        display-name = "Base";
+        bindings = <
+        // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────────╮
+               &kp ESC       &kp N1         &kp N2        &kp N3        &kp N4        &kp N5            &kp N6        &kp N7        &kp N8        &kp N9        &kp N0       &kp DEL
+        // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────────┤
+               &kp TAB       &kp Q          &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P      &kp LEFT_BRACKET
+        // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────────┤
+               &kp ESC       &kp A          &kp S         &kp D         &kp F         &kp G             &kp H         &kp J         &kp K         &kp L       &kp SEMI      &kp APOS
+        // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────────┤
+              &kp LSHFT      &kp Z          &kp X         &kp C         &kp V         &kp B             &kp N         &kp M      &kp COMMA      &kp DOT       &kp FSLH     &kp RIGHT_BRACKET
+        // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┴─────────────────╯
+                               &mo 1        &kp RET     &kp LEFT_GUI   &kp LCTRL    &kp SPACE      &kp LEFT_ALT     &mo 2       &kp BSPC
+        //                                           ╰─────────────┤─────────────┤─────────────┤   ├─────────────┼─────────────╯
+        >;
+    };
+
+    Mouse {
+      label = "Mouse";
+      display-name = "Mouse";
+      bindings = <
+        &trans   &trans   &trans   &trans    &trans    &trans            &trans &trans   &trans   &trans   &trans     &trans
+        &trans   &trans   &trans   &trans    &trans    &trans            &trans &trans   &trans   &trans   &trans     &trans 
+        &trans   &kp LGUI &kp LALT &kp LSHFT &kp LCTRL &trans            &trans &mkp MB1 &mkp MB2 &mkp MB3 &trans     &trans
+        &trans   &trans   &trans   &mo 3     &mo 2     &trans            &trans &trans   &trans   &trans   &trans     &trans
+                          &mkp MB1  &mkp MB2  &mkp MB3 &trans &trans          &trans &trans &trans                  
+      >;
+    };
+
+    Sym {
+      label = "Symbol";
+      display-name = "Symbol";
+      bindings = <
+      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+             &trans         &trans       &trans         &trans      &sys_reset   &bootloader         &trans       &trans         &trans        &trans        &trans        &trans
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             &trans         &trans       &kp UP         &trans       &trans         &trans           &kp N7       &kp N8         &kp N9        &kp N0        &kp HOME      &kp F1
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             &trans       &kp LEFT       &kp DOWN     &kp RIGHT      &trans         &trans           &kp N4       &kp N5         &kp N6        &none         &trans        &kp F10
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+           &kp LEFT_ALT    &trans        &trans         &trans      &kp MINUS      &kp PLUS          &kp N1       &kp N2         &kp N3        &kp DOT       &trans        &kp F20
+      // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
+                           &trans        &trans         &trans        &trans       &trans            &trans        &trans        &trans
+      //                                           ╰─────────────┤─────────────┤─────────────┤   ├─────────────┼─────────────╯
+      >;
+    };
+
+    Num {
+      label = "Number";
+      display-name = "Number";
+      bindings = <
+      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+             &trans        &trans         &trans       &trans         &trans       &trans          &bootloader    &sys_reset     &trans        &trans        &trans        &trans
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             &trans        &kp EXCL       &kp AT      &kp HASH       &kp DLLR     &kp PRCNT         &kp CARET      &kp AMPS    &kp KP_MULTIPLY &kp LPAR      &kp RPAR      &kp DEL
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             &trans        &trans         &trans       &trans         &trans       &trans           &trans          &trans      &trans        &trans        &trans        &trans
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             &trans        &trans        &trans        &trans         &trans       &trans           &kp MINUS      &kp PLUS     &kp LBRC      &kp RBRC      &kp PIPE      &kp TILDE
+      // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
+                           &trans        &trans         &trans        &trans       &trans            &trans        &trans        &trans
+      //                                           ╰─────────────┤─────────────┤─────────────┤   ├─────────────┼─────────────╯
+      >;
+    };
+
+    Fun {
+      label = "Function";
+      display-name = "Function";
+      bindings = <
+      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+             &trans        &trans         &trans       &trans         &trans       &trans           &trans         &trans         &trans        &trans        &trans        &trans
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             &trans        &trans         &trans       &trans         &trans       &trans           &trans         &trans         &trans        &trans        &trans        &trans
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             &trans        &trans         &trans       &trans         &trans        &sl 4           &trans         &trans         &trans        &trans        &trans        &trans
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             &trans        &trans         &trans       &trans         &trans       &trans           &trans         &trans         &trans        &trans        &trans        &to 0
+      // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
+                           &trans        &trans         &trans        &trans       &trans            &trans        &trans        &trans
+      //                                           ╰─────────────┤─────────────┤─────────────┤   ├─────────────┼─────────────╯
+      >;
+    };
+
+    Button {
+      label = "Game";
+      display-name = "Game";
+      bindings = <
+      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+             &trans        &trans         &trans       &trans         &trans       &trans           &trans         &trans         &trans        &trans        &trans        &trans
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             &trans        &trans         &trans       &trans         &trans       &trans           &trans         &trans         &trans        &trans        &trans        &trans
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             &trans        &trans         &trans       &trans         &trans        &sl 4           &trans         &trans         &trans        &trans        &trans        &trans
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             &trans        &trans         &trans       &trans         &trans       &trans           &trans         &trans         &trans        &trans        &trans        &to 0
+      // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
+                           &trans        &trans         &trans        &trans       &trans            &trans        &trans        &trans
+      //                                           ╰─────────────┤─────────────┤─────────────┤   ├─────────────┼─────────────╯
+      >;
+    };
+
+    Reset {
+      label = "Reset";
+      display-name = "Reset";
+      bindings = <
+      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+             &trans        &trans         &trans       &trans         &trans       &trans           &trans         &trans         &trans        &trans        &trans        &trans
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             &trans        &trans         &trans       &trans         &trans       &trans           &trans         &trans         &trans        &trans        &trans        &trans
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             &trans        &trans         &trans       &trans         &trans        &sl 4           &trans         &trans         &trans        &trans        &trans        &trans
+      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+             &trans        &trans         &trans       &trans         &trans       &trans           &trans         &trans         &trans        &trans        &trans        &to 0
+      // ╰─────────────┴─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┴─────────────╯
+                           &trans        &trans         &trans        &trans       &trans            &trans        &trans        &trans
+      //                                           ╰─────────────┤─────────────┤─────────────┤   ├─────────────┼─────────────╯
+      >;
+    };
+  };
+};
+
