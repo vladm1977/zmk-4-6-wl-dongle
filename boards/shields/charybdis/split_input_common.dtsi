@@ -1,12 +1,12 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
 
-#define DEF 0
-#define MOUSE 1
-#define SYM 2
-#define NUM 3
-#define FN 4
-#define GENSHIN 5 
+#define BASE 0
+#define NAV 1
+#define MEDIA 2
+#define Game 3
+#define Gameq 4
+#define MOUSE 5
 
 / {
   split_inputs {
@@ -21,29 +21,20 @@
 
   trackball_listener: trackball_listener {
     compatible = "zmk,input-listener";
-    status = "disabled";
+    status = "okay";
     device = <&trackball_split>;
+    layers = <0 1 2 3 4 5>;
+    input-processors = <&zip_xy_scaler 3 1>;
+    };
 
     snipe {
-      layers = <NUM>;
-      input-processors = <&zip_xy_scaler 1 3>;
+      layers = <5>;
+      input-processors = <&zip_xy_scaler 1 6>;
     };
 
     scroll {
-      layers = <FN>;
-      input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 3>, <&zip_xy_to_scroll_mapper>;
+      layers = <2>;
+      input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>, <&zip_xy_scaler 1 5>, <&zip_xy_to_scroll_mapper>;
     };
-
-    move {
-      layers = <DEF MOUSE>;
-      input-processors = <&auto_mouse_layer MOUSE 1000>;
-    };
-  };
-
-  auto_mouse_layer: auto_mouse_layer {
-    compatible = "zmk,input-processor-temp-layer";
-    #input-processor-cells = <2>;
-    require-prior-idle-ms = <500>;
-    #excluded-positions = <30 31 32 16 17 18 10 11 12 13 22 23>;
   };
 };
