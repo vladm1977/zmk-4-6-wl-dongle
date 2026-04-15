@@ -11,7 +11,7 @@
 
 &msc {
     time-to-max-speed-ms = <300>;
-    acceleration-exponent = <1>;
+    acceleration-exponent = <2>;
 };
 
 #define BASE 0
@@ -39,7 +39,11 @@
     quick-tap-ms = <175>;
 };
 
-&caps_word { /delete-property/ ignore-modifiers; };
+&caps_word {
+    /delete-property/ ignore-modifiers;
+
+    continue-list = <UNDERSCORE BACKSPACE DELETE MINUS>;
+};
 
 / {
     behaviors {
@@ -204,11 +208,11 @@
             label = "Base";
             display-name = "Base";
             bindings = <
-&kp ESC            &kp N1   &kp N2  &kp N3  &kp N4     &kp N5       &kp N6         &kp N7  &kp N8     &kp N9   &kp N0          &kp DEL
-&caps_word         &kp Q    &kp W   &kp E   &kp R      &kp T        &kp Y          &kp U   &kp I      &kp O    &kp P           &mt RIGHT_BRACKET LEFT_BRACKET
-&win_hold_tap 0 0  &lt 5 A  &kp S   &kp D   &kp F      &kp G        &kp H          &kp J   &kp K      &kp L    &kp SEMI        &kp APOS
-&kp LSHFT          &kp Z    &kp X   &kp C   &kp V      &kp B        &kp N          &kp M   &kp COMMA  &kp DOT  &mt QMARK FSLH  &kp RIGHT_SHIFT
-                                    &mo 2   &kp RET    &kp SPACE    &kp BACKSPACE  &mo 1
+&kp ESC            &kp N1   &kp N2  &kp N3  &kp N4     &kp N5       &kp N6         &kp N7       &kp N8     &kp N9   &kp N0          &kp DEL
+&caps_word         &kp Q    &kp W   &kp E   &kp R      &kp T        &kp Y          &kp U        &kp I      &kp O    &kp P           &mt RIGHT_BRACKET LEFT_BRACKET
+&win_hold_tap 0 0  &lt 5 A  &kp S   &kp D   &kp F      &kp G        &kp H          &kp J        &kp K      &kp L    &kp SEMI        &kp APOS
+&kp LSHFT          &kp Z    &kp X   &kp C   &kp V      &kp B        &kp N          &kp M        &kp COMMA  &kp DOT  &mt QMARK FSLH  &kp RIGHT_SHIFT
+                                    &mo 2   &kp RET    &kp SPACE    &kp BACKSPACE  &lt 1 GRAVE
                                             &kp LCTRL  &kp TAB      &kp LEFT_ALT
             >;
         };
@@ -217,12 +221,12 @@
             label = "Nav";
             display-name = "Nav";
             bindings = <
-&trans        &trans  &trans    &trans    &sys_reset        &bootloader    &trans  &trans        &trans  &trans   &trans     &trans
-&trans        &trans  &trans    &kp UP    &trans            &trans         &trans  &trans        &trans  &trans   &trans     &trans
-&trans        &trans  &kp LEFT  &kp DOWN  &kp RIGHT         &trans         &trans  &trans        &trans  &trans   &kp GRAVE  &trans
-&kp LEFT_ALT  &trans  &trans    &trans    &kp LC(NUMBER_1)  &kp LC(N0)     &snip   &app_closure  &trans  &kp DOT  &trans     &trans
-                                &trans    &trans            &trans         &trans  &trans
-                                          &trans            &trans         &trans
+&trans        &trans  &trans    &trans            &sys_reset  &bootloader    &trans  &trans        &trans  &trans   &trans     &trans
+&trans        &trans  &trans    &kp UP            &trans      &trans         &trans  &trans        &trans  &trans   &trans     &trans
+&trans        &trans  &kp LEFT  &kp DOWN          &kp RIGHT   &trans         &trans  &trans        &trans  &trans   &kp GRAVE  &trans
+&kp LEFT_ALT  &trans  &trans    &kp LC(NUMBER_1)  &kp LC(N0)  &trans         &snip   &app_closure  &trans  &kp DOT  &trans     &trans
+                                &trans            &trans      &trans         &trans  &trans
+                                                  &trans      &trans         &trans
             >;
         };
 
@@ -230,12 +234,12 @@
             label = "Symbol";
             display-name = "Media";
             bindings = <
-&kp F1  &kp F2        &kp F3          &kp F4    &kp F5        &kp F6             &kp F7     &kp F8     &kp F9           &kp F10   &kp F11   &kp F12
-&trans  &kp EXCL      &kp AT          &kp HASH  &kp DOLLAR    &kp PRCNT          &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp DELETE
-&trans  &bt BT_CLR    &kp C_PREVIOUS  &kp C_PP  &kp C_NEXT    &kp C_MUTE         &kp UNDER  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp TILDE
-&trans  &out OUT_TOG  &trans          &trans    &kp C_VOL_DN  &kp C_VOLUME_UP    &kp MINUS  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp GRAVE
-                                      &trans    &trans        &trans             &trans     &trans
-                                                &trans        &trans             &trans
+&kp F1  &kp F2        &kp F3          &kp F4        &kp F5           &kp F6        &kp F7     &kp F8     &kp F9           &kp F10   &kp F11   &kp F12
+&trans  &kp EXCL      &kp AT          &kp HASH      &kp DOLLAR       &kp PRCNT     &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp DELETE
+&trans  &bt BT_CLR    &kp C_PREVIOUS  &kp C_PP      &kp C_NEXT       &kp C_MUTE    &kp UNDER  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp TILDE
+&trans  &out OUT_TOG  &trans          &kp C_VOL_DN  &kp C_VOLUME_UP  &trans        &kp MINUS  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp GRAVE
+                                      &trans        &trans           &trans        &trans     &trans
+                                                    &trans           &trans        &trans
             >;
         };
 
