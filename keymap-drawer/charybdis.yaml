@@ -53,7 +53,7 @@ layers:
   - RET
   - SPACE
   - BACK SPACE
-  - Nav
+  - {t: '`', h: Nav}
   - LCTRL
   - TAB
   - LEFT ALT
@@ -97,9 +97,9 @@ layers:
   - LEFT ALT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - Ctl+ 1
   - Ctl+ 0
+  - {t: ▽, type: trans}
   - '&snip'
   - '&app_closure'
   - {t: ▽, type: trans}
@@ -154,9 +154,9 @@ layers:
   - {t: ▽, type: trans}
   - OUT TOG
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - VOL DN
   - VOLUME UP
+  - {t: ▽, type: trans}
   - '-'
   - +
   - '{'
