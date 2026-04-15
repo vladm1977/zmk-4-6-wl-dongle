@@ -273,7 +273,7 @@
 &trans  &trans  &trans  &trans     &trans     &trans       &trans  &trans     &trans     &trans     &trans  &trans
 &trans  &trans  &trans  &trans     &trans     &kp LCTRL    &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans  &trans
 &trans  &trans  &trans  &trans     &trans     &kp LSHFT    &trans  &trans     &trans     &trans     &trans  &trans
-                        &kp LC(X)  &kp LC(V)  &mkp LCLK    &trans  &trans
+                        &kp LC(A)  &kp LC(V)  &mkp LCLK    &trans  &trans
                                    &kp LC(C)  &kp LC(X)    &trans
             >;
         };
