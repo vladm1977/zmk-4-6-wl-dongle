@@ -335,7 +335,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Ctl+ A
-  - Ctl+ V
+  - {t: Ctl+ V, h: Ctl+Sft+ V}
   - L CLK
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
