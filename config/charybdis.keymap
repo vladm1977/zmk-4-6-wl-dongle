@@ -37,6 +37,9 @@
 };
 
 &mt {
+    tapping-term-ms = <240>;
+    quick-tap-ms = <150>;
+    flavor = "balanced";
 };
 
 / {
