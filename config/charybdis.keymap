@@ -30,6 +30,15 @@
     continue-list = <UNDERSCORE BACKSPACE DELETE MINUS>;
 };
 
+&lt {
+    tapping-term-ms = <240>;
+    quick-tap-ms = <150>;
+    flavor = "balanced";
+};
+
+&mt {
+};
+
 / {
     behaviors {
         smart_shift: smart_shift {
