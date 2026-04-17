@@ -100,9 +100,9 @@ layers:
   - Ctl+ 1
   - Ctl+ 0
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - '&snip'
   - '&app_closure'
-  - {t: ▽, type: trans}
   - .
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
