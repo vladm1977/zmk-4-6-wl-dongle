@@ -24,21 +24,6 @@
 #define KEYS_R 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 42 43 44 45 46 47
 #define THUMBS 48 49 50 51 52 53 54 55
 
-&sk {
-    release-after-ms = <600>;
-    quick-release;
-};
-
-&sl { ignore-modifiers; };
-
-&mt { flavor = "tap-preferred"; };
-
-&lt {
-    flavor = "balanced";
-    tapping-term-ms = <240>;
-    quick-tap-ms = <175>;
-};
-
 &caps_word {
     /delete-property/ ignore-modifiers;
 
@@ -47,54 +32,6 @@
 
 / {
     behaviors {
-        hml: hml {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <2000>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <250>;
-            hold-trigger-key-positions = <KEYS_R THUMBS>;
-            hold-trigger-on-release;
-            bindings = <&kp>, <&kp>;
-        };
-
-        hmr: hmr {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <2000>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <250>;
-            hold-trigger-key-positions = <KEYS_L THUMBS>;
-            hold-trigger-on-release;
-            bindings = <&kp>, <&kp>;
-        };
-
-        hml_s: hml_s {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <2000>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <0>;
-            hold-trigger-key-positions = <KEYS_R THUMBS>;
-            hold-trigger-on-release;
-            bindings = <&kp>, <&kp>;
-        };
-
-        hmr_s: hmr_s {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <2000>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <0>;
-            hold-trigger-key-positions = <KEYS_L THUMBS>;
-            hold-trigger-on-release;
-            bindings = <&kp>, <&kp>;
-        };
-
         smart_shift: smart_shift {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
