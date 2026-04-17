@@ -159,12 +159,12 @@
             label = "Nav";
             display-name = "Nav";
             bindings = <
-&trans        &trans  &trans    &trans            &sys_reset  &bootloader    &trans  &trans  &trans        &trans   &trans     &trans
-&trans        &trans  &trans    &kp UP            &trans      &trans         &trans  &trans  &trans        &trans   &trans     &trans
-&trans        &trans  &kp LEFT  &kp DOWN          &kp RIGHT   &trans         &trans  &trans  &trans        &trans   &kp GRAVE  &trans
-&kp LEFT_ALT  &trans  &trans    &kp LC(NUMBER_1)  &kp LC(N0)  &trans         &trans  &snip   &app_closure  &kp DOT  &trans     &trans
-                                &trans            &trans      &trans         &trans  &trans
-                                                  &trans      &trans         &trans
+&trans        &trans  &trans             &trans                         &sys_reset           &bootloader    &trans       &trans  &trans        &trans   &trans     &trans
+&trans        &trans  &trans             &mt LG(UP_ARROW) UP_ARROW      &trans               &trans         &trans       &trans  &trans        &trans   &trans     &trans
+&trans        &trans  &mt LG(LEFT) LEFT  &mt LG(DOWN_ARROW) DOWN_ARROW  &mt LG(RIGHT) RIGHT  &trans         &trans       &trans  &trans        &trans   &kp GRAVE  &trans
+&kp LEFT_ALT  &trans  &trans             &kp LC(NUMBER_1)               &kp LC(N0)           &trans         &kp LA(TAB)  &snip   &app_closure  &kp DOT  &trans     &trans
+                                         &trans                         &trans               &trans         &trans       &trans
+                                                                        &trans               &trans         &trans
             >;
         };
 
