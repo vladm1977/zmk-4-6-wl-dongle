@@ -72,13 +72,13 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Gui+Sft+ LEFT
   - {t: UP ARROW, h: Gui+ UP ARROW}
+  - Gui+Sft+ RIGHT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Gui+ TAB
+  - Gui+Ctl+ D
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -89,9 +89,9 @@ layers:
   - {t: RIGHT, h: Gui+ RIGHT}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - Gui+Ctl+ LEFT
+  - Gui+Ctl+ F4
+  - Gui+Ctl+ RIGHT
   - '`'
   - {t: ▽, type: trans}
   - LEFT ALT
@@ -99,7 +99,7 @@ layers:
   - {t: ▽, type: trans}
   - Ctl+ 1
   - Ctl+ 0
-  - {t: ▽, type: trans}
+  - Gui+ V
   - Alt+ TAB
   - '&snip'
   - '&app_closure'
